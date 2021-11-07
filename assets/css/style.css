@@ -157,7 +157,8 @@ section {
 }
 
 .weatherIcon img {
-    padding-left: 10px;
+    width: 5%;
+    margin-left: 10px;
 }
 
 /* five day forecast section */
