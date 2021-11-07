@@ -1,3 +1,26 @@
+let searches = [];
+
+let saveSearchHistory = function(city) {
+    if(searches) {
+        searches.push(city);
+    } else {
+        searches = [];
+        searches[0] = city;
+    };
+    localStorage.setItem("searches", JSON.stringify(searches));
+};
+
+let storeSearch = function(city) {
+    let historyDiv = document.querySelector("#searchHistory");
+    let historyBtn = document.createElement("button");
+    historyBtn.classList = "mb-15 round";
+    historyBtn.id = "history";
+    historyBtn.textContent = city;
+    historyDiv.appendChild(historyBtn);
+
+    saveSearchHistory(city);
+};
+
 let loadDailyWeather = function(data, i) {
     let spanTemp = document.querySelectorAll("#tempFuture");
     let lastTemp = spanTemp[spanTemp.length - 1];
@@ -130,6 +153,7 @@ let getCityCoords = function(city, data) {
             response.json().then(function(data) {
                 getCurrentWeather(city, data);
                 loadFiveDayContent(data);
+                storeSearch(city);
             })
         } else {
             console.log("Error: Not Found");
@@ -154,3 +178,19 @@ let formSubmit = function(event) {
 };
 
 document.querySelector("#submit").addEventListener("click", formSubmit);
+
+let loadSearchHistory = function() {
+    searches = JSON.parse(localStorage.getItem("searches"));
+
+    if(searches) {
+        for(let i = 0; i < searches.length; i++) {
+            let historyDiv = document.querySelector("#searchHistory");
+            let historyBtn = document.createElement("button");
+            historyBtn.classList = "history mb-15 round";
+            historyBtn.textContent = searches[i];
+            historyDiv.appendChild(historyBtn);
+        };
+    }   
+};
+
+loadSearchHistory();

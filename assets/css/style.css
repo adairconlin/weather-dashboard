@@ -20,7 +20,6 @@ body {
 /* HEADER STYLING */
 main {
     display: flex;
-    flex-wrap: wrap;
 }
 
 header {
@@ -94,6 +93,11 @@ section {
 
 #userInput {
     border-bottom: 10px solid var(--regular-pink);
+}
+
+#searchSection div {
+    display: flex;
+    flex-direction: column;
 }
 
 /* user history */
