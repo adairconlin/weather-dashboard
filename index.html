@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
@@ -14,57 +17,59 @@
 
     <main>
         <section id="searchSection">
-            <div id="userInput">
-                <h3>Search for a City:</h3>
-                <input type="text" placeholder="Charlotte">
-                <input type="submit">
+            <div id="userInput" class="mb-15">
+                <h3 class="mb-15">Search for a City:</h3>
+                <form id="cityForm">
+                    <input type="text" id="city" class="mb-15 round" placeholder="Charlotte" autocomplete="off"><br>
+                    <input type="submit" value="Submit" class="mb-15 round">
+                </form>
             </div>
             <div id="searchHistory">
-                <button class="history">Charlotte</button>
-                <button class="history">St. Paul</button>
+                <button class="history mb-15 round">Charlotte</button>
+                <button class="history mb-15 round">St. Paul</button>
             </div>
         </section>
 
         <section id="resultSection">
-            <div id="currentForecast">
+            <div id="currentForecast" class="mb-15 round">
                 <h1 id="location">Charlotte, NC</h1>
-                <h3 id="dateToday">Sun, November 7th</h3>
-                <p id="tempFuture">Temp: 74F</p>
-                <p id="wind">Wind: 6.6 mph</p>
-                <p id="humidity">Humidity: 46%</p>
-                <p id="uvIndex">UV Index: 0.47</p>
+                <h3 id="dateToday" class="mb-15">Sun, November 7th</h3>
+                <p id="tempFuture" class="mb-15">Temp: <span>74F</span></p>
+                <p id="wind" class="mb-15">Wind: <span>6.6 mph</span></p>
+                <p id="humidity" class="mb-15">Humidity: <span>46%</span></p>
+                <p id="uvIndex" class="mb-15">UV Index: <span>0.47</span></p>
             </div>
+            <h2 class="mb-15">5-Day Forecast</h2>
             <div id="fiveDayForecast">
-                <h2>5-Day Forecast</h2>
-                <div id="weatherCard">
-                    <h3 id="dateFuture">Mon, November 8th</h3>
-                    <p id="tempFuture">Temp: 73.2F</p>
-                    <p id="windFuture">Wind: 9.3 mpg</p>
-                    <p id="humidFuture">Humidity: 66%</p>
+                <div class="weatherCard round">
+                    <h3 id="dateFuture" class="mb-15">Mon, November 8th</h3>
+                    <p id="tempFuture">Temp: <span>73.2F</span></p>
+                    <p id="windFuture">Wind: <span>9.3 mph</span></p>
+                    <p id="humidFuture">Humidity: <span>66%</span></p>
                 </div>
-                <div id="weatherCard">
-                    <h3 id="dateFuture">Tues, November 9th</h3>
-                    <p id="tempFuture">Temp: 73.2F</p>
-                    <p id="windFuture">Wind: 9.3 mpg</p>
-                    <p id="humidFuture">Humidity: 66%</p>
+                <div class="weatherCard round">
+                    <h3 id="dateFuture" class="mb-15">Tues, November 9th</h3>
+                    <p id="tempFuture">Temp: <span>73.2F</span></p>
+                    <p id="windFuture">Wind: <span>9.3 mph</span></p>
+                    <p id="humidFuture">Humidity: <span>66%</span></p>
                 </div>
-                <div id="weatherCard">
-                    <h3 id="dateFuture">Wed, November 10th</h3>
-                    <p id="tempFuture">Temp: 73.2F</p>
-                    <p id="windFuture">Wind: 9.3 mpg</p>
-                    <p id="humidFuture">Humidity: 66%</p>
+                <div class="weatherCard round">
+                    <h3 id="dateFuture" class="mb-15">Wed, November 10th</h3>
+                    <p id="tempFuture">Temp: <span>73.2F</span></p>
+                    <p id="windFuture">Wind: <span>9.3 mph</span></p>
+                    <p id="humidFuture">Humidity: <span>66%</span></p>
                 </div>
-                <div id="weatherCard">
-                    <h3 id="dateFuture">Thurs, November 11th</h3>
-                    <p id="tempFuture">Temp: 73.2F</p>
-                    <p id="windFuture">Wind: 9.3 mpg</p>
-                    <p id="humidFuture">Humidity: 66%</p>
+                <div class="weatherCard round">
+                    <h3 id="dateFuture" class="mb-15">Thurs, November 11th</h3>
+                    <p id="tempFuture">Temp: <span>73.2F</span></p>
+                    <p id="windFuture">Wind: <span>9.3 mph</span></p>
+                    <p id="humidFuture">Humidity: <span>66%</span></p>
                 </div>
-                <div id="weatherCard">
-                    <h3 id="dateFuture">Fri, November 12th</h3>
-                    <p id="tempFuture">Temp: 73.2F</p>
-                    <p id="windFuture">Wind: 9.3 mpg</p>
-                    <p id="humidFuture">Humidity: 66%</p>
+                <div class="weatherCard round">
+                    <h3 id="dateFuture" class="mb-15">Fri, November 12th</h3>
+                    <p id="tempFuture">Temp: <span>73.2F</span></p>
+                    <p id="windFuture">Wind: <span>9.3 mph</span></p>
+                    <p id="humidFuture">Humidity: <span>66%</span></p>
                 </div>
             </div>
         </section>
