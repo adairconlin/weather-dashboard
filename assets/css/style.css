@@ -151,6 +151,15 @@ section {
     font-weight: 700;
 }
 
+.weatherIcon {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weatherIcon img {
+    padding-left: 10px;
+}
+
 /* five day forecast section */
 #fiveDayForecast {
     display: flex;
