@@ -127,6 +127,10 @@ section {
     padding-bottom: 8vw;
 }
 
+#currentForecast:hover {
+    background-image: linear-gradient(90deg, var(--input-blue) 10%, var(--lightest-pink) 100%);
+}
+
 #currentForecast h1 {
     font-size: 2.5vw;
     color: var(--lightest-pink);
@@ -161,8 +165,7 @@ section {
 }
 
 .weatherCard {
-    background-color: var(--header-peach);
-    color: var(--lightest-pink);
+    background-color: var(--search-orange);
     padding: .5vw 1vw 4vw 1vw;
     transition: .5s ease;
 }
@@ -172,6 +175,7 @@ section {
 }
 
 .weatherCard h3 {
+    color: var(--regular-pink);
     font-size: 1.2vw;
     padding-bottom: 10px;
     border-bottom: 5px solid var(--regular-pink);
