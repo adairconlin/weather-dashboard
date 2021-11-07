@@ -20,8 +20,8 @@
             <div id="userInput" class="mb-15">
                 <h3 class="mb-15">Search for a City:</h3>
                 <form id="cityForm">
-                    <input type="text" id="city" class="mb-15 round" placeholder="Charlotte" autocomplete="off"><br>
-                    <input type="submit" value="Submit" class="mb-15 round">
+                    <input type="text" id="city" class="mb-15 round" placeholder="St. Paul" autocomplete="off"><br>
+                    <input type="submit" value="Submit" id="submit" class="mb-15 round">
                 </form>
             </div>
             <div id="searchHistory">
@@ -32,12 +32,11 @@
 
         <section id="resultSection">
             <div id="currentForecast" class="mb-15 round">
-                <h1 id="location">Charlotte, NC</h1>
+                <h1 id="location">Charlotte</h1>
                 <h3 id="dateToday" class="mb-15">Sun, November 7th</h3>
-                <p id="tempFuture" class="mb-15">Temp: <span>74F</span></p>
-                <p id="wind" class="mb-15">Wind: <span>6.6 mph</span></p>
-                <p id="humidity" class="mb-15">Humidity: <span>46%</span></p>
-                <p id="uvIndex" class="mb-15">UV Index: <span>0.47</span></p>
+                <p class="mb-15">Temp: <span id="temp"></span></p>
+                <p class="mb-15">Wind: <span id="wind"></span></p>
+                <p  class="mb-15">Humidity: <span id="humidity"></span></p>
             </div>
             <h2 class="mb-15">5-Day Forecast</h2>
             <div id="fiveDayForecast">
