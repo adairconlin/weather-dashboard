@@ -8,6 +8,67 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <main>
+        <section id="searchSection">
+            <div id="userInput">
+                <h3>Search for a City:</h3>
+                <input type="text" placeholder="Charlotte">
+                <input type="submit">
+            </div>
+            <div id="searchHistory">
+                <button class="history">Charlotte</button>
+                <button class="history">St. Paul</button>
+            </div>
+        </section>
+
+        <section id="resultSection">
+            <div id="currentForecast">
+                <h1 id="location">Charlotte, NC</h1>
+                <h3 id="dateToday">Sun, November 7th</h3>
+                <p id="tempFuture">Temp: 74F</p>
+                <p id="wind">Wind: 6.6 mph</p>
+                <p id="humidity">Humidity: 46%</p>
+                <p id="uvIndex">UV Index: 0.47</p>
+            </div>
+            <div id="fiveDayForecast">
+                <h2>5-Day Forecast</h2>
+                <div id="weatherCard">
+                    <h3 id="dateFuture">Mon, November 8th</h3>
+                    <p id="tempFuture">Temp: 73.2F</p>
+                    <p id="windFuture">Wind: 9.3 mpg</p>
+                    <p id="humidFuture">Humidity: 66%</p>
+                </div>
+                <div id="weatherCard">
+                    <h3 id="dateFuture">Tues, November 9th</h3>
+                    <p id="tempFuture">Temp: 73.2F</p>
+                    <p id="windFuture">Wind: 9.3 mpg</p>
+                    <p id="humidFuture">Humidity: 66%</p>
+                </div>
+                <div id="weatherCard">
+                    <h3 id="dateFuture">Wed, November 10th</h3>
+                    <p id="tempFuture">Temp: 73.2F</p>
+                    <p id="windFuture">Wind: 9.3 mpg</p>
+                    <p id="humidFuture">Humidity: 66%</p>
+                </div>
+                <div id="weatherCard">
+                    <h3 id="dateFuture">Thurs, November 11th</h3>
+                    <p id="tempFuture">Temp: 73.2F</p>
+                    <p id="windFuture">Wind: 9.3 mpg</p>
+                    <p id="humidFuture">Humidity: 66%</p>
+                </div>
+                <div id="weatherCard">
+                    <h3 id="dateFuture">Fri, November 12th</h3>
+                    <p id="tempFuture">Temp: 73.2F</p>
+                    <p id="windFuture">Wind: 9.3 mpg</p>
+                    <p id="humidFuture">Humidity: 66%</p>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <script src="assets/js/script.js"></script>
 </body>
