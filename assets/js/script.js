@@ -1,6 +1,12 @@
 let searches = [];
 
 let saveSearchHistory = function(city) {
+    let historyDiv = document.querySelector("#searchHistory");
+    let historyBtn = document.createElement("button");
+    historyBtn.classList = "history mb-15 round";
+    historyBtn.textContent = city;
+    historyDiv.appendChild(historyBtn);
+
     if(searches) {
         searches.push(city);
     } else {
@@ -10,15 +16,17 @@ let saveSearchHistory = function(city) {
     localStorage.setItem("searches", JSON.stringify(searches));
 };
 
-let storeSearch = function(city) {
-    let historyDiv = document.querySelector("#searchHistory");
-    let historyBtn = document.createElement("button");
-    historyBtn.classList = "mb-15 round";
-    historyBtn.id = "history";
-    historyBtn.textContent = city;
-    historyDiv.appendChild(historyBtn);
-
-    saveSearchHistory(city);
+let checkSearch = function(city) {
+    if(!searches) {
+        saveSearchHistory(city);
+    } else {
+        for(let i = 0; i < searches.length; i++) {
+            if(searches[i] === city) {
+                return;
+            }
+        }
+        saveSearchHistory(city);
+    } 
 };
 
 let loadDailyWeather = function(data, i) {
@@ -153,7 +161,7 @@ let getCityCoords = function(city, data) {
             response.json().then(function(data) {
                 getCurrentWeather(city, data);
                 loadFiveDayContent(data);
-                storeSearch(city);
+                checkSearch(city);
             })
         } else {
             console.log("Error: Not Found");
@@ -161,9 +169,7 @@ let getCityCoords = function(city, data) {
     })
 };
 
-let formSubmit = function(event) {
-    event.preventDefault();
-    let city = document.querySelector("#city").value;
+let loadInitialData = function(city) {
     let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=198d07e9a046131e4583b2665e1187a0";
 
     fetch(apiUrl).then(function(response) {
@@ -175,7 +181,25 @@ let formSubmit = function(event) {
             console.log("Error: City Not Found");
         }
     }); 
+}
+
+let formSubmit = function(event) {
+    event.preventDefault();
+    let city = document.querySelector("#city").value;
+    loadInitialData(city);
 };
+
+document.querySelector("#searchHistory").addEventListener("click", function(event) {
+    if(event.target.nodeName === "BUTTON") {
+        let city = event.target.innerHTML;
+        loadInitialData(city);
+    }
+});
+
+document.querySelector("#city").addEventListener("click", function(event) {
+    event.target.value = "";
+    event.target.setAttribute("placeholder", "");
+});
 
 document.querySelector("#submit").addEventListener("click", formSubmit);
 
