@@ -117,6 +117,10 @@ section {
     cursor: pointer;
 }
 
+.history:focus {
+    outline: none;
+}
+
 /* RIGHT SECTION STYLING */
 /* current forecast section */
 #resultSection {
