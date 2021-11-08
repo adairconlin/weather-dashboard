@@ -43,6 +43,13 @@ let loadDailyWeather = function(data, i) {
     lastHumid.textContent = data.daily[i].humidity + "%";
 };
 
+let addFutureIcon = function(data, i) {
+    let iconCode = data.daily[i].weather[0].icon;
+    let iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+
+    return iconUrl;
+};
+
 let loadFiveDayContent = function(data) {
     let checkStatus = document.querySelector("#fiveDayForecast");
     if(checkStatus) {
@@ -64,6 +71,10 @@ let loadFiveDayContent = function(data) {
             futureDate.className= "mb-15";
             futureDate.textContent = "Mon, November " + (8 + i) + "th";
             weatherCard.appendChild(futureDate);
+
+            let weatherIcon = document.createElement("img");
+            weatherIcon.src = addFutureIcon(data, i);
+            weatherCard.appendChild(weatherIcon);
 
             for(let j = 0; j < 3; j++) {
                 let para = document.createElement("p");
@@ -131,6 +142,7 @@ let loadCurrentContent = function() {
 };
 
 let getCurrentWeather = function(city, data) {
+    console.log(data.current);
     let rightSection = document.querySelector("#resultSection");
     if(rightSection.children.length < 1) {
         loadCurrentContent();
