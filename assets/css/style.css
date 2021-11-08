@@ -189,6 +189,7 @@ section {
 #fiveDayForecast {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -225,3 +226,179 @@ section {
     color: var(--lightest-pink);
     font-weight: 700;
 }
+
+/* MEDIA QUERIES FOR MOBILE SCREENS */
+/* For smaller desktop screens and smaller */
+@media screen and (max-width: 980px) {
+    #searchSection {
+        margin: 20px 40px;
+    }
+
+    #searchSection h3 {
+        font-size: 26px;
+    }
+
+    #searchSection input[type=text] {
+        font-size: 18px;
+    }
+
+    #resultSection {
+        margin: 20px 40px 20px 0;
+    }
+
+    #currentForecast h1 {
+        font-size: 4vw;
+    }
+
+    #currentForecast p {
+        font-size: 2vw;
+    }
+
+    #fiveDayForecast {
+        justify-content: start;
+    }
+
+    .weatherCard {
+        max-width: 180px;
+        padding: 5px 20px 15px 20px;
+        margin: 5px;
+    }
+
+    .weatherCard h3 {
+        font-size: 1.8vw;
+    }
+
+    .weatherCard p {
+        font-size: 1.5vw;
+    }
+}
+
+/* For tablets and smaller */
+@media screen and (max-width: 768px) {
+    .mb-15 {
+        margin-bottom: 8px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    #searchSection {
+        margin: 15px 20px;
+    }
+
+    #searchSection h3 {
+        font-size: 14px;
+    }
+
+    #searchSection input[type=text] {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    #searchSection input[type=submit] {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .history {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    #resultSection {
+        margin: 10px 20px 10px 0;
+    }
+
+    #currentForecast p {
+        font-size: 2vw;
+    }
+
+    #fiveDayForecast {
+        justify-content: start;
+    }
+
+    .weatherCard {
+        max-width: 180px;
+        padding: 5px 20px 15px 20px;
+        margin: 5px;
+    }
+
+    .weatherCard h3 {
+        font-size: 1.8vw;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .weatherCard p {
+        font-size: 1.8vw;
+    }
+
+    .weatherCard img {
+        width: 25%;
+    }
+}
+
+/* For mobile phones and smaller */
+@media screen and (max-width: 575px) {
+    main {
+        flex-direction: column;
+    }
+
+    #searchSection {
+        flex-direction: row;
+        max-height: 100px;
+    }
+
+    #searchSection div {
+        margin: 0 10px;
+    }
+
+    #userInput {
+        border-bottom: none;
+    }
+
+    #searchHistory {
+        flex-wrap: wrap;
+        max-height: 110px;
+    }
+
+    .history {
+        padding: 2px 8px;
+        margin-right: 5px;
+    }
+
+    #resultSection {
+        margin-left: 20px;
+    }
+
+    #currentForecast h1 {
+        font-size: 5vw;
+    }
+
+    #currentForecast img {
+        width: 10%;
+    }
+
+    #currentForecast p {
+        font-size: 3vw;
+    }
+
+    .weatherCard {
+        padding-top: 10px;
+        max-width: 130px;
+    }
+
+    .weatherCard h3 {
+        font-size: 2vw;
+    }
+
+    .weatherCard img {
+        width: 45%;
+    }
+
+    .weatherCard p {
+        font-size: 2vw;
+    }
+}
+
