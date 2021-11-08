@@ -97,7 +97,21 @@ let loadFiveDayContent = function(data) {
     }       
 };
 
-let loadCurrentContent = function() {
+let uvScale = function(data) {
+    let uvi = data.current.uvi;
+    let value;
+    if(uvi < 3) {
+        value = "favorable";
+    } else if(uvi > 5) {
+        value = "severe";
+    } else {
+        value = "moderate";
+    }
+
+    return value;
+};
+
+let loadCurrentContent = function(data) {
     let rightSection = document.querySelector("#resultSection");
     let currentForecastDiv = document.createElement("div");
     currentForecastDiv.id = "currentForecast";
@@ -122,19 +136,23 @@ let loadCurrentContent = function() {
     currentDate.textContent = "Sun, November 7th";
     currentForecastDiv.appendChild(currentDate);
 
-    for(let i = 0; i < 3; i++) {
+    for(let i = 0; i < 4; i++) {
         let para = document.createElement("p");
         let spanInfo = document.createElement("span");
         para.className = "mb-15";
         if(i < 1) {
             para.textContent = "Temp: "
             spanInfo.id = "temp"
-        } else if(i > 1) {
-            para.textContent = "Humidity: ";
-            spanInfo.id = "humidity"
+        } else if(i == 1) {
+            para.textContent = "Wind: ";
+            spanInfo.id = "wind"
+        } else if(i == 2) {
+            para.textContent= "Humidty: ";
+            spanInfo.id= "humidity";
         } else {
-            para.textContent= "Wind: ";
-            spanInfo.id= "wind";
+            para.textContent = "UV Index: "
+            spanInfo.className = uvScale(data);
+            spanInfo.id = "uvindex";
         }
         currentForecastDiv.appendChild(para);
         para.appendChild(spanInfo);
@@ -142,16 +160,16 @@ let loadCurrentContent = function() {
 };
 
 let getCurrentWeather = function(city, data) {
-    console.log(data.current);
     let rightSection = document.querySelector("#resultSection");
     if(rightSection.children.length < 1) {
-        loadCurrentContent();
+        loadCurrentContent(data);
     }
 
     let location = document.querySelector("#location");
     let temperature = document.querySelector("#temp");
     let wind = document.querySelector("#wind");
     let humidity = document.querySelector("#humidity");
+    let uvIndex = document.querySelector("#uvindex");
     let icon = document.querySelector("#icon");
     let iconCode = data.current.weather[0].icon;
     let iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
@@ -161,6 +179,7 @@ let getCurrentWeather = function(city, data) {
     temperature.textContent = data.current.temp + "°F";
     wind.textContent = data.current.wind_speed + " mph";
     humidity.textContent = data.current.humidity + "%"; 
+    uvIndex.textContent = data.current.uvi;
 };
 
 let getCityCoords = function(city, data) {

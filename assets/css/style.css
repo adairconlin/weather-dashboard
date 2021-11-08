@@ -165,6 +165,22 @@ section {
     margin-left: 10px;
 }
 
+/* uv index classes */
+.favorable {
+    padding: 0 5px;
+    background-color: #BEC99E;
+}
+
+.moderate {
+    padding: 0 5px;
+    background-color: #D1A04E;
+}
+
+.severe {
+    padding: 0 5px;
+    background-color: #AB5A4A;
+}
+
 /* five day forecast section */
 #fiveDayForecast {
     display: flex;
