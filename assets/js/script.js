@@ -209,6 +209,12 @@ let getCurrentWeather = function(city, data) {
     uvIndex.textContent = data.current.uvi;
 };
 
+// Display error on page for the user.
+let apiError = function() {
+    let inputValue = document.querySelector("#city");
+    inputValue.value = "Error Retrieving Data";
+};
+
 // Load necessary data from specified city, to then call 
 // functions in order to display it to the user.
 let getCityCoords = function(city, data) {
@@ -230,7 +236,7 @@ let getCityCoords = function(city, data) {
                 checkSearch(city);
             })
         } else {
-            console.log("Error: Not Found");
+            apiError();
         }
     })
 };
@@ -246,7 +252,7 @@ let loadInitialData = function(city) {
                getCityCoords(city, data);
             })
         } else {
-            console.log("Error: City Not Found");
+            apiError();
         }
     }); 
 }
@@ -260,6 +266,7 @@ let formSubmit = function(event) {
     loadInitialData(city);
 };
 
+// Load the city data when user clicks on a city in their history.
 document.querySelector("#searchHistory").addEventListener("click", function(event) {
     if(event.target.nodeName === "BUTTON") {
         let city = event.target.innerHTML;
@@ -267,6 +274,7 @@ document.querySelector("#searchHistory").addEventListener("click", function(even
     }
 });
 
+// Clear input box when user clicks on it.
 document.querySelector("#city").addEventListener("click", function(event) {
     event.target.value = "";
     event.target.setAttribute("placeholder", "");
