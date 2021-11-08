@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <main>
+        <section id="searchSection">
+            <div id="userInput" class="mb-15">
+                <h3 class="mb-15">Search for a City:</h3>
+                <form id="cityForm">
+                    <input type="text" id="city" class="mb-15 round" placeholder="St. Paul" autocomplete="off"><br>
+                    <input type="submit" value="Submit" id="submit" class="mb-15 round">
+                </form>
+            </div>
+            <div id="searchHistory"></div>
+        </section>
+
+        <section id="resultSection"></section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

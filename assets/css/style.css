@@ -1,0 +1,223 @@
+:root {
+    --lightest-pink: #F6F1EE;
+    --regular-pink: #FBDCCE;
+    --header-peach: #F6C270;
+    --search-orange: #EFA885;
+    --input-blue: #5583A6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+}
+
+body {
+    background-color: var(--lightest-pink);
+}
+
+/* HEADER STYLING */
+main {
+    display: flex;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--header-peach);
+    padding: 20px 0;
+}
+
+header h1 {
+    color: var(--lightest-pink);
+    font-size: 46px;
+    font-weight: 700;
+}
+
+/* MAIN BODY ALLIGNMENT */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* LEFT SECTION STYLING */
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.round {
+    border-radius: 5px;
+}
+
+/* search form styling */
+#searchSection {
+    margin: 20px 80px;
+}
+
+#searchSection h3 {
+    font-size: 36px;
+    color: var(--search-orange);
+}
+
+#searchSection input[type=text] {
+    color: var(--input-blue);
+    font-size: 24px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid var(--search-orange);
+}
+
+#searchSection input[type=text]:focus {
+    outline: none;
+}
+
+#searchSection input[type=submit] {
+    color: var(--lightest-pink);
+    background-color: var(--search-orange);
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    transition: .5s ease;
+}
+
+#searchSection input[type=submit]:hover {
+    background-color: var(--input-blue);
+    cursor: pointer;
+}
+
+#userInput {
+    border-bottom: 10px solid var(--regular-pink);
+}
+
+#searchSection div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* user history */
+.history {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--lightest-pink);
+    width: 100%;
+    padding: 10px;
+    background-color: var(--header-peach);
+    border: none;
+    transition: .5s ease;
+}
+
+.history:hover {
+    background-color: var(--input-blue);
+    cursor: pointer;
+}
+
+/* RIGHT SECTION STYLING */
+/* current forecast section */
+#resultSection {
+    flex-grow: 2;
+    margin: 20px 80px 20px 0;
+}
+
+#currentForecast {
+    background-image: linear-gradient(90deg, var(--search-orange) 10%, var(--regular-pink) 80%, var(--lightest-pink) 100%);
+    padding: 20px;
+    width: 90%;
+    padding-bottom: 8vw;
+}
+
+#currentForecast:hover {
+    background-image: linear-gradient(90deg, var(--input-blue) 10%, var(--lightest-pink) 100%);
+}
+
+#currentForecast h1 {
+    font-size: 2.5vw;
+    color: var(--lightest-pink);
+}
+
+#currentForecast h3 {
+    color: var(--regular-pink);
+}
+
+#currentForecast p {
+    color: var(--regular-pink);
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+#currentForecast span {
+    color: var(--lightest-pink);
+    font-weight: 700;
+}
+
+.weatherIcon {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weatherIcon img {
+    width: 5%;
+    margin-left: 10px;
+}
+
+/* uv index classes */
+.favorable {
+    padding: 0 5px;
+    background-color: #BEC99E;
+}
+
+.moderate {
+    padding: 0 5px;
+    background-color: #D1A04E;
+}
+
+.severe {
+    padding: 0 5px;
+    background-color: #AB5A4A;
+}
+
+/* five day forecast section */
+#fiveDayForecast {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#resultSection h2 {
+    font-size: 28px;
+    padding-left: 20px;
+    color: var(--search-orange);
+}
+
+.weatherCard {
+    background-color: var(--search-orange);
+    padding: .5vw 1vw 4vw 1vw;
+    transition: .5s ease;
+}
+
+.weatherCard:hover {
+    background-color: var(--input-blue);
+}
+
+.weatherCard h3 {
+    color: var(--regular-pink);
+    font-size: 1.2vw;
+    padding-bottom: 10px;
+    border-bottom: 5px solid var(--regular-pink);
+}
+
+.weatherCard p {
+    color: var(--regular-pink);
+    font-size: 1.2vw;
+    padding-bottom: 10px;
+}
+
+.weatherCard span {
+    color: var(--lightest-pink);
+    font-weight: 700;
+}
