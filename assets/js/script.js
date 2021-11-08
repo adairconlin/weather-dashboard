@@ -69,7 +69,7 @@ let loadFiveDayContent = function(data) {
             let futureDate = document.createElement("h3");
             futureDate.id = "dateFuture";
             futureDate.className= "mb-15";
-            futureDate.textContent = "Mon, November " + (8 + i) + "th";
+            futureDate.textContent = moment().add(i + 1, "days").format("ddd, MMMM Do");
             weatherCard.appendChild(futureDate);
 
             let weatherIcon = document.createElement("img");
@@ -133,7 +133,7 @@ let loadCurrentContent = function(data) {
     let currentDate = document.createElement("h3");
     currentDate.id = "dateToday";
     currentDate.className = "mb-15";
-    currentDate.textContent = "Sun, November 7th";
+    currentDate.textContent = moment().format("dddd, MMMM Do");
     currentForecastDiv.appendChild(currentDate);
 
     for(let i = 0; i < 4; i++) {
